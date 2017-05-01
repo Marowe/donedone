@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @local_issue.title %>
+</p>
+
+<p>
+  <strong>Desription:</strong>
+  <%= @local_issue.desription %>
+</p>
+
+<p>
+  <strong>Priority level:</strong>
+  <%= @local_issue.priority_level_id %>
+</p>
+
+<p>
+  <strong>Fixer:</strong>
+  <%= @local_issue.fixer_id %>
+</p>
+
+<p>
+  <strong>Tester:</strong>
+  <%= @local_issue.tester_id %>
+</p>
+
+<%= link_to "Export", export_local_issues_path(@local_issue) %>
+
+<%= link_to 'Edit', edit_local_issue_path(@local_issue) %> |
+<%= link_to 'Back', local_issues_path %>

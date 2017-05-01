@@ -1,0 +1,32 @@
+<% if @issues.any? %>
+ <h2>Issues</h2>
+ <table class="table table-striped">
+ <thead>
+ <tr>
+ <th>Project</th>
+ <th>Priority</th>
+ <th>Title</th>
+ <th>Status</th>
+ <th>Fixer</th>
+ <th>Tester</th>
+ </tr>
+ </thead>
+ <tbody>
+ <% @issues.each do |issue| %>
+ <tr>
+ <td><%= issue.project.title %></td>
+ <td><span class="label label-<%= issue.priority.downcase %>"><%= issue.priority %></span></td>
+ <td><strong><%= link_to '#' + issue.order_number.to_s + ': ' + issue.title, issue %></strong></td>
+ <td><%= issue.status %></td>
+ <td><%= issue.tester %></td>
+ <td><%= issue.fixer %></td>
+ </tr>
+ </tbody>
+ </table><br />
+   <% end %>
+
+  <td><%= link_to 'Create Issue', new_local_issue_path %></td><br />
+  <td><%= link_to 'Local Issue', local_issues_path %></td><br />
+  <td><%= link_to 'Import Issues', sync_index_path %></td><br />
+  <td><%= link_to "Back", :back %></td><br />
+<% end %>

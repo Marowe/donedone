@@ -1,0 +1,2 @@
+module LocalIssuesHelper
+end

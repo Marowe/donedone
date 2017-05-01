@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project: one
+  order_number: 1
+  title: MyString
+  description: MyString
+  created_on: 2017-04-28 19:24:22
+  last_updated_on: 2017-04-28 19:24:22
+  last_updater: MyString
+  tester: MyString
+  fixer: MyString
+  creator: MyString
+  priority: MyString
+  status: MyString
+  due_date: 2017-04-28
+
+two:
+  project: two
+  order_number: 1
+  title: MyString
+  description: MyString
+  created_on: 2017-04-28 19:24:22
+  last_updated_on: 2017-04-28 19:24:22
+  last_updater: MyString
+  tester: MyString
+  fixer: MyString
+  creator: MyString
+  priority: MyString
+  status: MyString
+  due_date: 2017-04-28

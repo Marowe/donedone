@@ -1,0 +1,46 @@
+<%= form_for(@issue, html: { multipart: :true, class: "form" }) do |form| %>
+  <% if @issue.errors.any? %>
+    <div>
+      <h2><%= pluralize(@issue.errors.count, "error") %> prohibited this issue from being saved:</h2>
+
+      <ul>
+      <% @issue.errors.full_messages.each do |message| %>
+        <%= message %>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div>
+    <%= form.collection_select :project_id, Project.all, :id, :title %><br />
+    </div>
+
+    <div>
+    <%= form.text_field :title, placeholder: :title %><br />
+    </div>
+
+    <div>
+    <%= form.text_field :description, placeholder: :desription %><br />
+    </div>
+
+    <div>
+    <%= form.text_field :priority, placeholder: :priority %><br />
+    </div>
+
+    <div>
+    <%= form.text_field :tester, placeholder: :tester %><br />
+    </div>
+
+    <div>
+    <%= form.text_field :fixer, placeholder: :fixer %>
+    </div>
+
+    <table>
+    <ul>
+    <tr>
+    <td><%= form.submit "Submit" %></td>
+    <td><%= link_to "Back", :back %></td>
+    </tr>
+    </ul>
+    </table>
+<% end %>

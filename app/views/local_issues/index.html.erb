@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Local Issues</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Desription</th>
+      <th>Priority level</th>
+      <th>Fixer</th>
+      <th>Tester</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @local_issues.each do |local_issue| %>
+      <tr>
+        <td><%= local_issue.title %></td>
+        <td><%= local_issue.desription %></td>
+        <td><%= local_issue.priority_level_id %></td>
+        <td><%= local_issue.fixer_id %></td>
+        <td><%= local_issue.tester_id %></td>
+        <td><%= link_to 'Show', local_issue %></td>
+        <td><%= link_to 'Edit', edit_local_issue_path(local_issue) %></td>
+        <td><%= link_to 'Destroy', local_issue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<td><%= link_to 'New Local Issue', new_local_issue_path %></td><br />
+<td><%= link_to 'Online Issues', issues_path %></td><br />
+<td><%= link_to 'Import Issues', sync_index_path %></td><br />
+<td><%= link_to "Back", :back %></td><br />
